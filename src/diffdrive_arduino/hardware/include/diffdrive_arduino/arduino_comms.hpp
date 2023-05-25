@@ -84,19 +84,19 @@ public:
     std::string response = send_msg("\r");
   }
 
-  void read_encoder_values(int &val_1, int &val_2, double &val_3,double &val_4 )
+  void read_encoder_values(int &val_1, int &val_2)
   {
     std::string response = send_msg("e\r");
 
     std::istringstream iss(response);
-    std::string token_1, token_2, token_3, token_4;
+    std::string token_1, token_2;
 
-    iss >> token_1 >> token_2 >> token_3 >> token_4;
+    iss >> token_1 >> token_2 ;
 
     val_1 = std::atoi(token_1.c_str());
     val_2 = std::atoi(token_2.c_str());
-    val_3 = std::stof(token_3.c_str());
-    val_4 = std::stof(token_4.c_str());
+    //val_3 = std::stod(token_3.c_str());
+    //val_4 = std::stod(token_4.c_str());
 
   }
   void set_motor_values(double val_1, double val_2)
@@ -109,8 +109,15 @@ public:
   void set_pid_values(double k_p, double k_i, double k_d, double n)
   {
     std::stringstream ss;
-    ss << "u" << k_p << ":" << k_i << ":" << k_d << ":" << n << "\r";
+    ss << "p" << k_p << "\r";
     send_msg(ss.str());
+    ss << "i" << k_i << "\r";
+    send_msg(ss.str());
+    ss << "d" << k_d << "\r";
+    send_msg(ss.str());
+    ss << "n" << n << "\r";
+    send_msg(ss.str());
+
   }
 
 private:

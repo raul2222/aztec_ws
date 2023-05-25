@@ -13,7 +13,7 @@ gnome-terminal -- bash -c "ros2 launch oradar_lidar ms200_scan.launch.py; exec b
 
 sleep 6
 
-gnome-terminal -- bash -c "ros2 launch aztec_robot localization_launch.py map:=/home/raul/ws_AZTEC/save.yaml use_sim_time:=false; exec bash"
+gnome-terminal -- bash -c "ros2 launch aztec_robot localization_launch.py map:=/home/raul/aztec_ws/save.yaml use_sim_time:=false; exec bash"
 
 sleep 5
 
