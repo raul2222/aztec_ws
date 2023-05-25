@@ -38,24 +38,24 @@ hardware_interface::CallbackReturn DiffDriveArduinoHardware::on_init(
 
   cfg_.left_wheel_name = info_.hardware_parameters["left_wheel_name"];
   cfg_.right_wheel_name = info_.hardware_parameters["right_wheel_name"];
-  cfg_.loop_rate = std::stoi(info_.hardware_parameters["loop_rate"]);
+  cfg_.loop_rate = std::stod(info_.hardware_parameters["loop_rate"]);
   cfg_.device = info_.hardware_parameters["device"];
   cfg_.baud_rate = std::stoi(info_.hardware_parameters["baud_rate"]);
   cfg_.timeout_ms = std::stoi(info_.hardware_parameters["timeout_ms"]);
   cfg_.enc_counts_per_rev = std::stoi(info_.hardware_parameters["enc_counts_per_rev"]);
-  /*
-  if (info_.hardware_parameters.count("pid_p") > 0)
-  {
+  
+  //if (info_.hardware_parameters.count("pid_p") > 0)
+  //{
     cfg_.pid_p = std::stod(info_.hardware_parameters["pid_p"]);
     cfg_.pid_i = std::stod(info_.hardware_parameters["pid_i"]);
     cfg_.pid_d = std::stod(info_.hardware_parameters["pid_d"]);
     cfg_.n = std::stod(info_.hardware_parameters["n"]);
-  }
-  else
-  {
-    RCLCPP_INFO(rclcpp::get_logger("DiffDriveArduinoHardware"), "PID values not supplied, using defaults.");
-  }
-  */
+  //}
+  //else
+  //{
+  //  RCLCPP_INFO(rclcpp::get_logger("DiffDriveArduinoHardware"), "PID values not supplied, using defaults.");
+  //}
+  
 
   wheel_l_.setup(cfg_.left_wheel_name, cfg_.enc_counts_per_rev);
   wheel_r_.setup(cfg_.right_wheel_name, cfg_.enc_counts_per_rev);
@@ -205,16 +205,16 @@ hardware_interface::return_type DiffDriveArduinoHardware::read(
     return hardware_interface::return_type::ERROR;
   }
 
-  comms_.read_encoder_values(wheel_l_.enc, wheel_r_.enc, wheel_l_.vel, wheel_r_.vel);
+  comms_.read_encoder_values(wheel_l_.enc, wheel_r_.enc);
+  double delta_seconds = period.seconds();
 
-
+  double pos_prev = wheel_l_.pos;
   wheel_l_.pos = wheel_l_.calc_enc_angle();
-  //wheel_l_.vel = wheel_l_.vel;
+  wheel_l_.vel = (wheel_l_.pos - pos_prev) / delta_seconds;
 
-
+  pos_prev = wheel_r_.pos;
   wheel_r_.pos = wheel_r_.calc_enc_angle();
-  //wheel_r_.vel = wheel_r_.vel;
-
+  wheel_r_.vel = (wheel_r_.pos - pos_prev) / delta_seconds;
   return hardware_interface::return_type::OK;
 }
 

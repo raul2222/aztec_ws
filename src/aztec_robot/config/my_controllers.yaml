@@ -1,6 +1,6 @@
 controller_manager:
   ros__parameters:
-    update_rate: 60
+    update_rate: 120
     # use_sim_time: true
 
     diff_cont:
@@ -12,7 +12,7 @@ controller_manager:
 diff_cont:
   ros__parameters:
 
-    publish_rate: 60.0
+    publish_rate: 120.0
 
     base_frame_id: base_footprint
     odom_frame_id: odom
