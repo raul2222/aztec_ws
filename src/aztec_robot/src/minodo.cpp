@@ -11,7 +11,7 @@ public:
     : Node("mi_nodo")
     {
         subscription_ = this->create_subscription<geometry_msgs::msg::Twist>(
-        "cmd_vel", 10, std::bind(&MiNodo::listener_callback, this, std::placeholders::_1));
+        "cmd_vel", 1, std::bind(&MiNodo::listener_callback, this, std::placeholders::_1));
     }
 
 private:
@@ -21,13 +21,13 @@ private:
         std::string ip = "192.168.11.198:33333";
         //RCLCPP_INFO(this->get_logger(), "He recibido: [%f, %f]", msg->linear.x, msg->angular.z);
         if (msg->angular.z > value) {
-            RCLCPP_INFO(this->get_logger(), "El robot está girando a la izquierda");
+            //RCLCPP_INFO(this->get_logger(), "El robot está girando a la izquierda");
             makeGetRequest("http://" + ip + "/right");
         } else if (msg->angular.z < (-1*value)) {
-            RCLCPP_INFO(this->get_logger(), "El robot está girando a la derecha");
+            //RCLCPP_INFO(this->get_logger(), "El robot está girando a la derecha");
             makeGetRequest("http://"+ip+"//left");
         } else {
-            RCLCPP_INFO(this->get_logger(), "El robot está avanzando recto");
+            //RCLCPP_INFO(this->get_logger(), "El robot está avanzando recto");
             makeGetRequest("http://"+ip+"//normal");
         }
     }

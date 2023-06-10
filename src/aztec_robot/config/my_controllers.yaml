@@ -1,6 +1,6 @@
 controller_manager:
   ros__parameters:
-    update_rate: 120
+    update_rate: 100
     # use_sim_time: true
 
     diff_cont:
@@ -12,7 +12,7 @@ controller_manager:
 diff_cont:
   ros__parameters:
 
-    publish_rate: 120.0
+    publish_rate: 100.0
 
     base_frame_id: base_footprint
     odom_frame_id: odom
@@ -42,7 +42,7 @@ diff_cont:
     linear.x.has_jerk_limits: false
     linear.x.max_velocity: 0.35
     linear.x.min_velocity: -0.24
-    linear.x.max_acceleration: 1.9
+    linear.x.max_acceleration: 3.9
     linear.x.max_jerk: 0.0
     linear.x.min_jerk: 0.0
 
@@ -51,7 +51,7 @@ diff_cont:
     angular.z.has_jerk_limits: false
     angular.z.max_velocity: 1.8
     angular.z.min_velocity: -1.8
-    angular.z.max_acceleration: 2.6
+    angular.z.max_acceleration: 3.6
     angular.z.min_acceleration: -2.6
     angular.z.max_jerk: 0.0
     angular.z.min_jerk: 0.0
