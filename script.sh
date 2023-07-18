@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /home/raul/ws_AZTEC/
+cd /home/remote/aztec_ws/
 
 # Ejecutar el primer archivo de launch en una nueva ventana de terminal
 gnome-terminal -- bash -c "ros2 launch aztec_robot launch_robot.launch.py; exec bash"
@@ -10,10 +10,11 @@ sleep 3
 
 # Ejecutar el segundo archivo de launch en una nueva ventana de terminal
 gnome-terminal -- bash -c "ros2 launch oradar_lidar ms200_scan.launch.py; exec bash"
+gnome-terminal -- bash -c "python src/MobileNet/main.py; exec bash"
 
 sleep 3
 
-gnome-terminal -- bash -c "ros2 launch aztec_robot localization_launch.py map:=/home/raul/aztec_ws/save.yaml use_sim_time:=false; exec bash"
+gnome-terminal -- bash -c "ros2 launch aztec_robot localization_launch.py map:=/home/remote/aztec_ws/save4.yaml use_sim_time:=false; exec bash"
 
 sleep 3
 

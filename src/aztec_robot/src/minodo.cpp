@@ -18,17 +18,21 @@ private:
     void listener_callback(const geometry_msgs::msg::Twist::SharedPtr msg)
     {
         float value = 0.41;
-        std::string ip = "192.168.11.198:33333";
+        std::string ip = "192.168.0.198:33333";
+        std::string ip_matrix = "192.168.0.196";
         //RCLCPP_INFO(this->get_logger(), "He recibido: [%f, %f]", msg->linear.x, msg->angular.z);
         if (msg->angular.z > value) {
             //RCLCPP_INFO(this->get_logger(), "El robot está girando a la izquierda");
             makeGetRequest("http://" + ip + "/right");
+            makeGetRequest("http://" + ip_matrix + "/aztec2");
         } else if (msg->angular.z < (-1*value)) {
             //RCLCPP_INFO(this->get_logger(), "El robot está girando a la derecha");
             makeGetRequest("http://"+ip+"//left");
+            makeGetRequest("http://" + ip_matrix + "/aztec2");
         } else {
             //RCLCPP_INFO(this->get_logger(), "El robot está avanzando recto");
             makeGetRequest("http://"+ip+"//normal");
+            makeGetRequest("http://" + ip_matrix + "/aztec");
         }
     }
 

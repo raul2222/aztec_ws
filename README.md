@@ -1,66 +1,50 @@
-# Desarrollo de Aztec: un robot experimental para la intervención en niños con autismo utilizando el método TEACCH
+# UNIVERSITAT POLITÈCNICA DE VALÈNCIA
+## School of Gandia Superior Polytechnic
+### Development of Aztec: An experimental robot for intervention in children with autism using the TEACCH method
+#### Final Degree Project 
+#### Degree in Interactive Technologies
+##### AUTHOR: Santos Lopez, Raul 
+##### Tutor: Pérez Pascual, Mª Asunción 
+##### ACADEMIC YEAR: 2022/2023
 
-**Fecha:** 25 de Abril de 2023  
-**Autor:** Raúl Santos López  
-**Propuesta de T.F.G. Grado en Tecnologías Interactivas de la Universidad Politécnica de Valencia.**
+## Index
+1. [Introduction](#introduction)
+2. [Objectives](#objectives)
+    1. [Main Objective](#main-objective)
+    2. [Secondary Objectives](#secondary-objectives)
+3. [Methodology and Technologies used](#methodology-and-technologies-used)
+    1. [Description of the Aztec Robot](#description-of-the-aztec-robot)
+        1. [Appearance and general design](#appearance-and-general-design)
+    2. [Proposed methodology to work with the robot](#proposed-methodology-to-work-with-the-robot)
+        1. [TEACCH Method](#teacch-method)
+        2. [Data collection](#data-collection)
+        3. [Configuration of Aztec for therapy sessions](#configuration-of-aztec-for-therapy-sessions)
+        4. [Evaluation and improvement](#evaluation-and-improvement)
+    3. [Technologies used to implement the robot](#technologies-used-to-implement-the-robot)
+        1. [Hardware](#hardware)
+        2. [Software](#software)
+    4. [Implementation of the Aztec robot](#implementation-of-the-aztec-robot)
+4. [Tests](#tests)
+5. [User feedback](#user-feedback)
+6. [Sustainable Development Goals](#sustainable-development-goals)
+7. [Conclusions and Future Work](#conclusions-and-future-work)
+8. [References](#references)
+9. [Appendices](#appendices)
 
-## Índice
-1. [Introducción](#introducción)
-2. [Objetivos](#objetivos)
-3. [Metodología](#metodología)
-4. [Cronograma](#cronograma)
-5. [Resultados esperados](#resultados-esperados)
-6. [Bibliografía](#bibliografía)
+## 1 - Introduction
+Autism is a developmental neurological disorder that manifests in childhood and continues throughout the individual's life. This disorder impacts communication, social interaction, and the behavior of those who suffer from it. Given the increasing prevalence of autism in recent decades, there is an emphasized need to develop effective intervention strategies to improve the quality of life of people with autism [3].
 
-## Introducción
+Early intervention and continuous support are crucial to assist children with autism in developing essential skills and adapting to society. In this context, the TEACCH method (Treatment and Education of Autistic and related Communication-handicapped CHildren), developed at the University of North Carolina in Chapel Hill, has proven to be a valuable educational and therapeutic approach, focusing on the individual skills and needs of each child with autism. However, implementing this method can be challenging due to the varied needs and abilities of each child [1].
 
-El autismo es un trastorno del desarrollo neurológico que afecta a la comunicación, la interacción social y el comportamiento. La intervención temprana y el apoyo continuo son,esenciales para ayudar a los niños con autismo a desarrollar habilidades y adaptarse a la sociedad. El método TEACCH (Treatment and Education of Autistic and related Communication-handicapped CHildren) es un enfoque educativo y terapéutico que se centra en las habilidades y las necesidades individuales de cada niño con autismo. En este contexto, el presente trabajo propone el diseño y desarrollo de Aztec, un robot experimental para la intervención en niños con autismo, capaz de interactuar con ellos y proponer actividades configuradas por terapeutas a través de una interfaz web.
+Autism, an autism spectrum disorder (ASD), presents unique challenges in communication, social interaction, and behavior patterns, which can be restrictive and repetitive [2]. Although the exact factors leading to autism are still under investigation, it has been demonstrated that both genetic and environmental components play significant roles.
 
-## Objetivos
+With prevalence that has increased over recent decades, there is a growing demand for effective interventions that enhance the quality of life of individuals with autism [3]. This is where intervention strategies such as the TEACCH method come into play.
 
-1. Diseñar y desarrollar un robot experimental llamado Aztec con un enfoque en la interacción con niños con autismo.
+Invented by Dr. Eric Schopler at the University of North Carolina in Chapel Hill, the TEACCH method focuses on visual learning and uses various visual aids to facilitate the acquisition of skills and concepts [4]. However, one of the main drawbacks of TEACCH is its lack of a robust interactive component [5].
 
-2. Implementar dos actividades basadas en el método TEACCH en la primera versión de Aztec.
+The world of technology has provided solutions to this limitation, particularly robotics. The interactivity and predictability of robots make them beneficial tools for children with autism, who often find difficulties in the unpredictability of human interactions [6].
 
-3. Crear una interfaz web que permita a los terapeutas configurar las actividades para cada niño y monitorear su progreso.
+Some studies have shown that children with autism are naturally attracted to technology, and robots, with their interactive and dynamic nature, can be particularly captivating [7]. Additionally, it has been found that interaction with robots can foster the development of social and communication skills in children with autism [8].
 
-4. Evaluar la eficacia de Aztec en la intervención con niños con autismo.
+Aztec, the experimental robot for intervention in children with autism, emerges as an innovative response to this challenge. It combines the pedagogical approach of the TEACCH method with the interactivity of robotics, providing a more personalized and effective intervention environment for children with autism. With its advanced features, such as the ability to maintain conversations and a comprehensive data storage system, Aztec is positioned as a promising tool for autism intervention. However, its effectiveness still needs to be validated through rigorous research.
 
-## Metodología
-
-Investigación y análisis de las necesidades y requerimientos de los niños con autismo y sus terapeutas.
-
-Diseño y construcción del hardware de Aztec, incluyendo sensores, cámaras, pantalla y
-sistema de locomoción.
-
-Desarrollo del software de Aztec, incluyendo la implementación de algoritmos de
-reconocimiento de personas, comunicación en varios idiomas, y transmisión de audio y
-video en formato HD.
-
-Creación de la interfaz web para la configuración de actividades y monitoreo del progreso.
-
-Evaluación de la eficacia de Aztec mediante pruebas piloto con niños con autismo y sus terapeutas.
-
-## Cronograma
-
-- Meses 1-2: Investigación y análisis de necesidades y requerimientos.
-- Meses 3-4: Diseño y construcción del hardware de Aztec.
-- Meses 5-6: Desarrollo del software de Aztec e implementación de actividades basadas en el método TEACCH.
-- Meses 7-8: Creación de la interfaz web y pruebas de funcionalidad.
-- Meses 9-10: Evaluación y pruebas piloto con niños con autismo y terapeutas.
-- Meses 11-12: Análisis de resultados y elaboración del informe final.
-
-## Resultados esperados
-
-Se espera que Aztec sea una herramienta efectiva para la intervención en niños con
-autismo, facilitando la realización de actividades basadas en el método TEACCH y
-permitiendo a los terapeutas personalizar y monitorear el progreso de cada niño a través de una interfaz web. Además, se espera que Aztec promueva la interacción y el aprendizaje en un entorno seguro y controlado, mejorando la comunicación y las habilidades sociales de los niños con autismo. Los resultados de este proyecto podrían contribuir al desarrollo de tecnologías robóticas más avanzadas y accesibles para la intervención en trastornos del desarrollo neurológico.
-
-## Bibliografía
-
-- Wainer, J., Dautenhahn, K., Robins, B., & Amirabdollahian, F. (2014). A pilot study with a novel setup for collaborative play of the humanoid robot KASPAR with children with autism. International Journal of Social Robotics, 6(1), 45-65.
-- [A Concise Introduction to Robot Programming with ROS2 de Francisco Martín (Autor)](https://docs.ros.org/en/foxy)
-- [https://control.ros.org/](https://control.ros.org/)
-- [https://navigation.ros.org/](https://navigation.ros.org/) (ecosistema ROS)
-- [https://articulatedrobotics.xyz/ de Josh Newans (Autor)](https://articulatedrobotics.xyz/)
-- [https://automaticaddison.com/ de Addison Sears-Collins (Autor)](https://automaticaddison.com/)

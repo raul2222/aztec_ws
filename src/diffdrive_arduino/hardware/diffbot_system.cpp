@@ -181,7 +181,7 @@ hardware_interface::CallbackReturn DiffDriveArduinoHardware::on_activate(
   }
   if (cfg_.pid_p > 0)
   {
-    comms_.set_pid_values(cfg_.pid_p,cfg_.pid_i,cfg_.pid_i,cfg_.n);
+    comms_.set_pid_values(cfg_.pid_p,cfg_.pid_i,cfg_.pid_d,cfg_.n);
   }
   RCLCPP_INFO(rclcpp::get_logger("DiffDriveArduinoHardware"), "Successfully activated!");
 
