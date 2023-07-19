@@ -440,44 +440,82 @@ At this point, I would like to highlight an open-source project by NVIDIA called
 
 In summary, this Final Degree Project has been a first approach to exploring the potential of robotics in interventions for autism. Although there is still a long way to go, I am full of optimism and confident that future efforts can continue to build upon this foundation to improve the quality of life for children with autism.
 
+
 ## 8 - References
 
+
 [1] E. Schopler, S. Brehm, M. Kinsbourne, and R. Reichler, "Effect of Treatment Structure on Development in Autistic Children," Archives of General Psychiatry, vol. 24, no. 5, pp. 415–421, 1971.
+
 [2] American Psychiatric Association. (2013). Diagnostic and Statistical Manual of Mental Disorders (5th ed.). Arlington, VA: American Psychiatric Publishing.
+
 [3] Centers for Disease Control and Prevention. (2020). Autism Spectrum Disorder (ASD). CDC, February. [Online]. Available: https://www.cdc.gov/ncbddd/autism/data.html.
+
 [4] E. Schopler, G. Mesibov, and K. Hearsey, "Structured teaching in the TEACCH system," in Learning and cognition in autism, Springer, 1995, pp. 243-268.
+
 [5] S. Ozonoff and K. Cathcart, "Effectiveness of a home program intervention for young children with autism," Journal of Autism and Developmental Disorders, vol. 28, no. 1, pp. 25–32, 1998.
+
 [6] J. Diehl, L. Schmitt, M. Villano, and C. Crowell, "The clinical use of robots for individuals with autism spectrum disorders: A critical review," Research in Autism Spectrum Disorders, vol. 6, no. 1, pp. 249–262, 2012.
+
 [7] H. Kozima, C. Nakagawa, and Y. Yasuda, "Interactive robots for communication-care: a case-study in autism therapy," IEEE Transactions on Robotics, vol. 23, no. 5, pp. 1050-1056, 2007.
+
 [8] E. Kim, L. Berkovits, R. Bernier, D. Leyzberg, F. Shic, R. Paul, and B. Scassellati, "Social robots as embedded reinforcers of social behavior in children with autism," Journal of Autism and Developmental Disorders, vol. 43, no. 5, pp. 1038–1049, 2013.
+
 [9] Flexible 32x8 NeoPixel RGB LED Matrix. [Online]. Available: https://www.adafruit.com/product/2294 [Accessed: June 2023].
+
 [10] Luxonis, "OAK-D-PRO," [Online]. Available: https://shop.luxonis.com/products/oak-d-pro?variant=42455252369631 [Accessed: June 2023].
+
 [11] Orbbec Technology Group, "MS200," [Online]. Available: http://en.oradar.com.cn/index/product/index.html?id=2 [Accessed: June 2023].
+
 [12] LG, "LG G4 5.5-inch Display," [Online]. Available: https://www.lg.com/ar/celulares/lg-H815AR [Accessed: June 2023].
+
 [13] Samsung, "INR21700-33J 3270mAh - 6.4A," [Online]. Available: https://www.nkon.nl/rechargeable/li-ion/21700-20700-size/samsung-inr21700-33j-3270mah-3-2a-z-tag.html [Accessed: June 2023].
+
 [14] Tof Sensors, "Solid State Lidar CS20," [Online]. Available: https://www.tofsensors.com/products/soild-state-lidar_cs20 [Accessed: June 2023].
+
 [15] TDK, "INMP441," [Online]. Available: https://invensense.tdk.com/wp-content/uploads/2015/02/INMP441.pdf [Accessed: June 2023].
+
 [16] Intel, "Movidius™ Myriad™ X," [Online]. Available: https://www.intel.es/content/www/es/es/products/details/processors/movidius-vpu/movidius-myriad-x.html [Accessed: June 2023].
+
 [17] Intel, "Core i7-6700," [Online]. Available: https://www.intel.com/content/www/us/en/products/sku/88196/intel-core-i76700-processor-8m-cache-up-to-4-00-ghz/specifications.html [Accessed: June 2023].
+
 [18] Corsair, "2 x 8GB Vengeance LPX," [Online]. Available:  https://www.corsair.com/es/es/p/memory/cmk16gx4m2b3200c16/vengeancea-lpx-16gb-2-x-8gb-ddr4-dram-3200mhz-c16-memory-kit-black-cmk16gx4m2b3200c16	[Accessed: 06, 2023].
+
 [19] Samsung, "NVME 250GB EVO 970 PLUS," [Online]. Available:  https://www.samsung.com/es/memory-storage/nvme-ssd/970-evo-plus-1tb-mz-v7s1t0bw/	 [Accessed: 06, 2023].
+
 [20] OpenAI, "GPT-4," [Online]. Available:  https://openai.com/gpt-4	 [Accessed: 06, 2023].
+
 [21] DIGITAL SERVO, "DS3218MG," [Online]. Available:  https://es.aliexpress.com/item/1943129663.html?spm=a2g0o.order_list.order_list_main.53.68f0194dd1lQlZ&gatewayAdapt=glo2esp  [Accessed: 06, 2023].
+
 [22] Open Source, "LangChain," [Online]. Available:  https://python.langchain.com/docs/get_started/introduction.html  [Accessed: 06, 2023].
+
 [23] Open Source, "RVIZ2," [Online]. Available:  https://turtlebot.github.io/turtlebot4-user-manual/software/rviz.html   [Accessed: 06, 2023].
+
 [24] OpenAI (open-source), "Whisper," [Online]. Available:  https://openai.com/research/whisper    [Accessed: 06, 2023].
+
 [25] Google (open-source), "Tacotron 2," [Online]. Available:  https://ai.googleblog.com/2017/12/tacotron-2-generating-human-like-speech.html     [Accessed: 06, 2023].
+
 [26] Open Source, "ROS 2," [Online]. Available:  https://docs.ros.org/en/humble, https://control.ros.org/, https://navigation.ros.org/  [Accessed: 06, 2023].
+
 [27] Pololu, "19:1 Metal Gearmotor 37Dx68L mm 12V with 64 CPR Encoder (Helical Pinion)," [Online]. Available:  https://www.pololu.com/product/4751	  [Accessed: 06, 2023].
+
 [28] Open Source, "SLAM Toolbox," [Online]. Available:  https://github.com/SteveMacenski/slam_toolbox   [Accessed: 06, 2023].
+
 [29] Open Source, "rosbag2," [Online]. Available:  https://github.com/ros2/rosbag2	   [Accessed: 06, 2023].
+
 [30] WHEELTEC, "Neumático de robot de 65mm," [Online]. Available:  https://item.taobao.com/item.htm?id=675857812223   [Accessed: 06, 2023].
+
 [31] Wholesale of Lianggu Furniture Caster Wheels, "Rueda Carter transparente de 2 pulgadas," [Online]. Available:  https://item.taobao.com/item.htm?id=671296900632 	 [Accessed: 06, 2023].
+
 [32] Star Electronic Technology, "2A lithium battery charging board 12.6V," [Online]. Available:  https://item.taobao.com/item.htm?id=671296900632 	 [Accessed: 06, 2023].
+
 [33] Xianyu (Taobao), "JBL Speaker," [Online]. Available:  https://market.m.taobao.com/app/idleFish-F2e/fish-pc/web/detail.html?id=595237376060	  [Accessed: 06, 2023].
+
 [34] NVIDIA (open-source), "Voyager," [Online]. Available:  https://github.com/MineDojo/Voyager  [Accessed: 06, 2023].
+
 [35] F. Martín, A Concise Introduction to Robot Programming with ROS2, 2022.
+
 [36] J. Newans, Articulated Robotics. Available: https://articulatedrobotics.xyz/ [Accessed: 25 de junio de 2023].
+
 [37] A. Sears-Collins, Automatic Addison. Available: https://automaticaddison.com/	   [Accessed: 25 de junio de 2023].
 
 ## 9 - Appendices
