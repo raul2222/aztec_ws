@@ -10,20 +10,20 @@
 ## Index
 1. [Introduction](#introduction)
 2. [Objectives](#objectives)
-    1. [Main Objective](#main-objective)
-    2. [Secondary Objectives](#secondary-objectives)
+    2.1 [Main Objective](#main-objective)
+    2.2 [Secondary Objectives](#secondary-objectives)
 3. [Methodology and Technologies used](#methodology-and-technologies-used)
-    1. [Description of the Aztec Robot](#description-of-the-aztec-robot)
-        1. [Appearance and general design](#appearance-and-general-design)
-    2. [Proposed methodology to work with the robot](#proposed-methodology-to-work-with-the-robot)
-        1. [TEACCH Method](#teacch-method)
-        2. [Data collection](#data-collection)
-        3. [Configuration of Aztec for therapy sessions](#configuration-of-aztec-for-therapy-sessions)
-        4. [Evaluation and improvement](#evaluation-and-improvement)
-    3. [Technologies used to implement the robot](#technologies-used-to-implement-the-robot)
-        1. [Hardware](#hardware)
-        2. [Software](#software)
-    4. [Implementation of the Aztec robot](#implementation-of-the-aztec-robot)
+    3.1 [Description of the Aztec Robot](#description-of-the-aztec-robot)
+        3.1.1 [Appearance and general design](#appearance-and-general-design)
+    3.2 [Proposed methodology to work with the robot](#proposed-methodology-to-work-with-the-robot)
+        3.2.1 [TEACCH Method](#teacch-method)
+        3.2.2 [Data collection](#data-collection)
+        3.2.3 [Configuration of Aztec for therapy sessions](#configuration-of-aztec-for-therapy-sessions)
+        3.2.4 [Evaluation and improvement](#evaluation-and-improvement)
+    3.3 [Technologies used to implement the robot](#technologies-used-to-implement-the-robot)
+        3.3.1 [Hardware](#hardware)
+        3.3.2 [Software](#software)
+    3.4 [Implementation of the Aztec robot](#implementation-of-the-aztec-robot)
 4. [Tests](#tests)
 5. [User feedback](#user-feedback)
 6. [Sustainable Development Goals](#sustainable-development-goals)
@@ -74,4 +74,120 @@ Aztec is a robot designed as an experimental resource to interact with children 
 
 Figure 1. Photograph of Aztec robot
 
+## 3.1.1 Appearance and General Design
+
+Aztec has a square box structure that facilitates handling and implementation of various internal components. The box used as a chassis is made of recycled plastic, underscoring the project's commitment to sustainability and environmental care.
+
+On the front face of Aztec, a 64x16 WS2812B Neopixel [15] screen is located, providing a user interface where pictograms can be displayed, which are visible under direct sunlight thanks to their luminous power. In addition, it has a movable head that can perform pan and tilt movements thanks to the incorporation of two servos [21]. This movement capability adds a dimension of interactivity and dynamism to interactions with Aztec.
+
+For its movement, Aztec is equipped with two 65 x 26 mm WHEELTEC [30] wheels and a generic Carter wheel [31], which although not expressly designed for robotics, offers more than adequate performance. The management and coordination of these wheels are carried out by a differential controller, which, while simpler than the Ackermann model, gives Aztec total maneuverability, allowing 360-degree turns on its own axis and free movement in any direction.
+
+Aztec's face is a 5.5-inch screen that displays two eyes, designed with the Unity video game creation platform and compiled for Android. This feature gives Aztec a more human look, which can help improve its acceptance and promote engagement from children. 
+
+Continuing with its commitment to sustainability and reuse, Aztec is mostly composed of second-hand components. This approach has several advantages. Firstly, it contributes to the circular economy, reducing the need to produce new components and thus decreasing the environmental impact associated with their manufacture. Secondly, it allows for the creation of an advanced and functional robot at a reduced cost, making technology more accessible.
+
+The reuse of second-hand components does not prevent Aztec from fulfilling its function. Each component has been carefully selected and tested to ensure it meets the necessary requirements for its role in the robot. This strategy has allowed us to build an effective and environmentally friendly robot without sacrificing its performance or functionality.
+
+## 3.2 Proposed Methodology for Working with the Robot
+
+Aztec's main purpose is to be a valuable tool in interventions with children diagnosed with autism. To achieve this, we have chosen to use a methodology inspired by the structured teaching method for children with autism, known as TEACCH. The design and implementation of the robot are intrinsically linked to this methodology, and therefore, before delving into the technical details of how Aztec has been developed, it is crucial to understand this methodology.
+
+### 3.2.1 TEACCH Method
+
+The TEACCH Method (Treatment and Education of Autistic and related Communication-handicapped CHildren) focuses on using each child's individual strengths and preferences to promote learning and development. The differences of each child are recognized and respected, and the aim is to provide individualized interventions that are appropriate for their unique needs and abilities.
+
+Interventions are based on structure and routine, with a strong visual focus, as many children with autism are strong visual learners. A small-step teaching approach is used, with lots of positive reinforcement and support to encourage learning.
+
+Aztec will implement activities based on this method for intervention. The interactivity and friendly aspect of the robot will be used to attract and maintain the children's attention during these activities. The robot will also provide positive reinforcements and support during the intervention sessions.
+
+### 3.2.2 Data Collection
+
+An essential component of the methodology is data collection during interventions. Aztec is equipped to record and store conversations, along with data collected by its multiple sensors. This data provides a detailed overview of the interaction between the child and the robot and can be used for subsequent analysis. In section 3.2.4, the specific data that Aztec saves is detailed.
+
+The analysis of the data collected by Aztec will be carried out using a combined approach of quantitative and qualitative methods.
+
+The qualitative analysis will focus on the content and nature of the interactions, exploring emotional responses, language forms used, and the quality of the interactions between the child and Aztec.
+
+On the other hand, the quantitative analysis will focus on numerical and statistical measures, such as the frequency and duration of interactions and the number of times certain commands or actions are used.
+
+These two approaches will provide a complete picture of how Aztec interacts with children and how these interactions can be improved to more effectively benefit children with autism.
+
+## 3.2.3 Aztec Configuration for Therapy Sessions
+
+The configuration of Aztec for therapy sessions begins with the definition of a context in Langchain[22]. This essential step provides Aztec with an "awareness", informing it about its identity, its location, and with whom it will interact.
+
+Aztec's default context is as follows:
+"You are Aztec, a robot that interacts with children. Your job is conducted in an association for children. Avoid mentioning the word 'autistic'. Your responses are short and considered, as you are in an environment with young children. You are friendly, pleasant, and amiable, always willing to help others.”
+
+This context can be enriched with any additional relevant information.
+
+Aztec's autonomous navigation is managed by the 'Goal pose' option in the RVIZ2 program [23]. This resource allows Aztec to move autonomously within a predefined space. When Aztec approaches the child, a PS3 analog controller is used for more precise control. With this controller, the left analog stick controls Aztec's head movements, while the right analog stick directs the robot's base movement. Thus, Aztec can interact safely and effectively with the child during therapy sessions.
+
+## 3.2.4 Evaluation and Improvement
+
+The sensors incorporated into Aztec collect a variety of data that are critical for evaluating the effectiveness of interventions and identifying areas for improvement. These include, but are not limited to:
+
+1. Vision Data: Sourced from the Luxonis OAK-D-PRO computer vision camera [10]. This data can provide information about the children's facial and body responses during the interaction, such as facial expressions and body movements.
+
+2. Depth and Proximity Data: Collected by the 3D Time of Flight (ToF) CS20 sensor [14]. They can be used to assess the child's proximity to the robot, which could indicate the child's comfort level or interest.
+
+3. Audio Data: The audio data, which is collected by the TDK INMP441 microphone [15], is crucial in analyzing the verbal responses and sounds emitted by the children. This information becomes especially relevant when it can be employed in other projects such as "Implementation of an Emotion Detection Algorithm for Therapy Applications in Children," supervised by academic tutor Mª Asunción Pérez Pascual, finished on 21/09/22. The interpretation of this audio data offers a deeper perspective on the children's emotions during interactions, which allows for the development of more efficient and personalized therapy.
+
+4. LIDAR Data: Collected by the Orbbec Technology Group's MS200 LIDAR [11]. These data can be useful in determining the child's movement patterns in the robot's environment.
+
+This collected data can provide valuable insights into how children with autism interact with Aztec. For example, consistent patterns in the depth and proximity data might suggest that a child feels more comfortable when interacting with Aztec at a certain distance. Similarly, changes in facial expressions and body movements, captured by the computer vision camera, could indicate positive or negative responses to certain interventions.
+
+This data can be used to adjust and improve future interventions, such as personalizing the proximity at which Aztec interacts with each child, or adjusting interventions based on the detected facial and bodily responses.
+
+Moreover, it may also be possible to use this data to train machine learning models, enabling more autonomous and personalized interaction with the children in the future. This will provide a solid foundation for future research and developments in the field of autism intervention and could lead to significant advances in the way these interventions are conducted.
+
+## 3.3 Technologies Used to Implement the Robot
+
+Aztec was designed using a combination of advanced hardware and software technologies, including processing systems, sensors, motors, software platforms, and machine learning algorithms.
+
+## 3.3.1 Hardware
+
+Aztec's hardware configuration is a composition of various advanced components that ensure its functionality and effectiveness in interacting with users.
+
+Table 1 shows the hardware used, including a description and bibliographical references.
+
+| Product | Description |
+| --- | --- |
+| OAK-D-PRO [10] | Advanced computer vision device equipped with depth and RGB cameras, as well as an IR dot projector. With the Myriad X chip, it allows real-time execution of deep learning models. Ideal for image analysis and object detection in AI projects. |
+| Myriad X [16] | Intel's VPU (Vision Processor Unit) chip, incorporated in the OAK-D-Pro, allows high-speed AI inferences. This computer vision device efficiently uses this component to analyze and process images in real time for AI applications. |
+| 3D ToF CS20 [14] | Solid-state LIDAR, capable of offering a resolution of 640x480 at 30 fps, is a crucial device for the accurate capture of 3D data. This sensor uses light pulses to map environments and objects in great detail. |
+| Mic INMP441 [15] | High-precision, low-noise MEMS microphone with digital I2S output, ideal for voice and audio recognition applications. |
+| LIDAR MS200 [11] | The MS200 LIDAR is an advanced laser technology sensor that uses light and triangulation methods to generate detailed three-dimensional representations of environments and objects. It stands out for its high accuracy and speed, essential elements for tasks such as mapping, autonomous navigation, and object detection. |
+| LG G4 [12] | Smartphone that stands out for its slightly curved 5.5-inch OLED screen. It offers a quality visual experience, along with other solid features that make it a competitive and versatile mobile device. |
+| Pololu Motors [27] | The 37Dx68L mm 12V metal gearmotor with 64 CPR encoder and helical pinion offers a 19:1 ratio. It is ideal for applications that require precise speed and position control, combined with high durability and performance. It is used to control the movement of the robot's wheels. |
+| Intel i7-6700 Skylake [17] | Four-core, eight-thread processor with a base frequency of 3.4GHz, capable of reaching up to 4.0GHz with Turbo Boost. Supports DDR4 memory, has an 8MB cache, and a 14nm process technology. Ideal for demanding applications and games. |
+| 2x8 GB DDR4 Corsair [18] | Two Corsair DDR4 modules of 8GB each provide high performance, stability, and energy efficiency. They offer fast data transfer speeds and are used for intensive computing tasks. |
+| NVME 250GB [19] | High-performance solid state drive (SSD), offering read/write speeds of up to 3500/2300 MB/s. It has V-NAND technology and is used for intensive data read/write tasks. |
+| 36 x 21700 Lithium batteries 3270 mAh Samsung [13] | 36 cylindrical 21700 Samsung Lithium-ion batteries, each with a capacity of 3270 mAh. |
+| 3 x ESP32 [20] | Powerful dual-core microcontroller with integrated WiFi and Bluetooth capabilities. Supports a wide variety of peripherals and communication protocols, and has low power consumption. Used for IoT, robotics, and wearable projects. |
+| 2 x Lithium charger [32] | 2A 4.2V 8.4V 12.6V Lithium battery charging module, synchronous rectification DC-DC with low heat generation and high efficiency. |
+| JBL Speaker [33] | JBL flip 5 speaker, length 8cm, width 4.4cm, neodymium magnet 3cm. |
+
+## Table 1: Aztec Robot Hardware
+
+## 3.3.2 Software
+
+The following table describes all the software technologies that have been used in the realization of the project.
+
+## 3.3.2 Software
+
+| Name | Description |
+| --- | --- |
+| Programming Languages | C++ for ESP32, Python for verbal interaction and C++ along with Python in ROS2 |
+| ROS2 | Robot Operating System 2, is a software platform that provides a set of essential services for building robotic applications. It offers tools and libraries that enable efficient, safe, and highly interoperable robotic systems development. |
+| ROS2 NAV2 | Navigation 2 (NAV2) is an open-source ROS2 package that implements the navigation platform. As part of ROS2, it provides a range of advanced navigation features, including path planning, motion control, and target tracking. All this with an emphasis on robustness, flexibility, and interoperability. |
+| ROS2 CONTROL | Essential element in the ROS2 ecosystem, it provides a standardized interface for interacting with robotic hardware. Its structure allows developers to easily manipulate controllers and sensors, allowing them to focus on high-level control logic, resulting in greater efficiency and promoting code reuse. |
+| Whisper (Local CPU Inference) | A system developed by OpenAI that uses AI to train voice to text transcription models accurately and efficiently. |
+| VAD | Voice Activity Detection, is an algorithm that identifies the presence or absence of human voice in audio signals, helping to improve efficiency in voice processing applications. |
+| GPT-4 (Inference on OpenAI servers) | Designed with the main goal of producing text, this long language model has been trained using a vast collection of Internet data. |
+| Langchain | An open-source project that optimizes interaction with GPT-4. Offers advanced features for natural language processing, such as enriched responses and detailed context. |
+| Tacotron 2 (Local CPU Inference) | A Text to speech Model that converts text into Mel spectrograms. Works alongside a vocoder, like MelGAN, to generate high-quality synthetic voice. |
+| MelGAN (Local CPU Inference) | A Generative Model that transforms Mel spectrograms into audio, producing high-quality synthesized voice in real time. |
+| Ubuntu 22.04 | Ubuntu is a Linux-based operating system, known for its ease of use. It is free, open-source, and highly customizable. |
+| Unity | A highly versatile and accessible 3D and 2D game development engine. It offers a robust platform for creating interactive experiences, used by indie developers and large game studios. Supports multiple platforms. |
 
