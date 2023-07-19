@@ -216,4 +216,16 @@ The diagram below shows Aztec's hardware and its connections:
 
 ![Aztec Robot](https://github.com/raul2222/aztec_ws/blob/main/src/aztec_robot/src/images/figure2.png)
 
+Figure 2: Internal Connection Diagram of Aztec.
+
+To better understand how Aztec's software meets the needs of the various stakeholders involved, it is helpful to examine a series of "user stories". User stories are a technique used in software development that helps to define the features and functionalities of the system from the perspective of the end user. Below are some user stories that describe how Aztec interacts with different types of users:
+
+User Story Number 1
+
+a. Description of US1: 
+
+"As the mother of a child with ASD, I want Aztec to be able to verbally interact with my child to help him improve his communication skills."
+
+b. Algorithms and processes used to implement US1:
+
 
