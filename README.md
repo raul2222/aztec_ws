@@ -70,7 +70,7 @@ As a future research line that allows Aztec's continuous evolution, the third ob
 
 Aztec is a robot designed as an experimental resource to interact with children diagnosed with Autism Spectrum Disorder (ASD). This robot takes inspiration from iconic characters of popular culture such as WALL-E and Short Circuit, with the goal of creating a friendly and accessible design that facilitates a stronger connection with the children.
 
-![Aztec Robot](https://raw.githubusercontent.com/raul2222/aztec_ws/src/aztec_robot/src/images/figure1.png)
+![Aztec Robot](https://github.com/raul2222/aztec_ws/blob/main/src/aztec_robot/src/images/figure1.png)
 
 Figure 1. Photograph of Aztec robot
 
