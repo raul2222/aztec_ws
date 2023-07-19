@@ -274,7 +274,9 @@ If the system detects an absence of voice for 2 seconds after previously detecti
 
 a. Description of User Story 2 (US2):
 
+
 "As an occupational therapist and educator specialized in ASD, I wish Aztec can recognize, adapt, and move autonomously and safely in its environment. This will allow Aztec to effectively interact with children and students during therapy sessions and in the classroom without the need for constant supervision."
+
 
 b. Algorithms and processes used to implement US2:
 
@@ -290,6 +292,7 @@ c. HU2 Block Diagram and Explanation:
 
 ![Aztec Robot](https://github.com/raul2222/aztec_ws/blob/main/src/aztec_robot/src/images/figure5.png)
 Figure 5: Navigation 2 Architecture.
+
 Source: https://ros2-industrial-workshop.readthedocs.io/en/latest/_source/navigation/ROS2-Navigation.html
 
 
@@ -309,6 +312,7 @@ During this process, it's vital to understand that the NAV2 core sends informati
 
 In summary, autonomous navigation in NAV2 is a complex process that demands the coordinated interaction of multiple components. However, the high parameterization that each module offers through its plugins and its YAML or XML configuration files is appreciated. This flexibility allows the system to adapt to a wide variety of needs and contexts, facilitating the implementation of efficient and effective autonomous navigation solutions.
 
+
 d. HU2 Flowchart:
 
 ![HU2 User Story Flowchart](https://github.com/raul2222/aztec_ws/blob/main/src/aztec_robot/src/images/figure6.png)
@@ -317,7 +321,9 @@ Figure 6: Diagrama de flujo historia de usuario 2.
 
 After obtaining the map of the place where we plan to use NAV2's autonomous navigation, we proceed to initialize the robot, sensors, and NAV2's navigation and localization modules. If any of these modules generate an error, navigation will not work, and repairs will be needed. If everything has initialized correctly, we can start navigation by setting a point on the map. Once navigation has been successful and we have reached the goal, it's at this point where we can use a joystick or any other module we've programmed. For instance, we could use a face detector in OAK-D-PRO to get its bounding boxes, calculate the centroid, and thus make Aztec able to look directly into the eyes of the person in front of it.
 
+
 ## User Story Number 3
+
 
 a. HU3 Description:
 
@@ -337,21 +343,23 @@ b. Algorithms and Processes Used to Implement HU3:
 
 c. Block Diagram HU3 and its explanation:
 
-![Figure 7: User Story Number 3 Block Diagram](your-image-url-here)
+![Figure 7: User Story Number 3 Block Diagram](https://github.com/raul2222/aztec_ws/blob/main/src/aztec_robot/src/images/figure7.png)
 
 Aztec agrees with the user on the music to use to start physical activity, for which it consults the music API and starts the exercise. During the activity, Aztec plays the selected audio and displays the exercise to be performed on its pixel matrix. Simultaneously, the body position detection model, which is preloaded on OAK-D-PRO, sends data to Aztec to verify if the exercise is being carried out correctly. Aztec, making use of the information provided by the 2D and 3D LIDARs, performs dance movements and examines its environment to ensure safe movement. Finally, Aztec offers verbal feedback to the user about their performance during the exercise.
 
 d. Flow Diagram HU3:
 
-![Figure 8: User Story Number 3 Flow Diagram](your-image-url-here)
+![Figure 8: User Story Number 3 Flow Diagram](https://github.com/raul2222/aztec_ws/blob/main/src/aztec_robot/src/images/figure8.png)
 
 Aztec verifies if the user has not performed enough physical activity in the last few hours and, if so, suggests the user dance. If the user approves, the activity begins. During and at the end of the activity, Aztec provides feedback to the user. Finally, Aztec records the activity to verify that it has been carried out and how it was performed.
 
-User Story Number 4
+## User Story Number 4
+
 
 a. Description of HU4:
 
 "As a professional in interventions for children with autism, I need a robot like Aztec that can integrate the strategies of the TEACCH method into its interaction, maintain understandable dialogues, collect data from sessions to personalize the intervention, and offer positive stimuli to encourage the child's learning and development."
+
 
 b. Algorithms and processes used to implement HU4:
 
@@ -362,15 +370,16 @@ b. Algorithms and processes used to implement HU4:
 | Aztec Verbal Interaction | This involves the use of voice recognition and synthesis to communicate, respond to commands, and provide audible feedback to users. See HU 1. |
 | Aztec Sensors | 2D and 3D LIDAR for obstacle detection and navigation, OAK-D-PRO for body position detection and gesture recognition, and sound sensors for verbal interaction. These sensors allow Aztec to effectively respond to the child's needs and provide a rich user experience. |
 
+
 c. Block Diagram HU4 and its explanation:
 
-![Figure 9: User Story Number 4 Block Diagram](your-image-url-here)
+![Figure 9: User Story Number 4 Block Diagram](https://github.com/raul2222/aztec_ws/blob/main/src/aztec_robot/src/images/figure9.png)
 
 The professional reviews the previous therapy sessions stored in Rosbag2 and also schedules new events in the calendar for the child. Aztec, for its part, informs the child about the calendar events through its voice and the Neopixel panel.
 
 d. Flow Diagram HU4:
 
-![Figure 10: User Story Number 4 Flow Diagram](your-image-url-here)
+![Figure 10: User Story Number 4 Flow Diagram](https://github.com/raul2222/aztec_ws/blob/main/src/aztec_robot/src/images/figure10.png)
 
 Aztec first checks the calendar to verify if there are scheduled tasks. If there are any, Aztec informs the user. If the user decides not to perform the task, Aztec records this decision and returns to the starting point, remaining on standby until the time of the next task comes. On the other hand, if the user accepts the task, Aztec remains on standby until the user finishes, records the completed task, and then returns to the starting point to wait until the time of the next task.
 
@@ -506,7 +515,7 @@ In summary, this Final Degree Project has been a first approach to exploring the
 
 [31] Wholesale of Lianggu Furniture Caster Wheels, "Rueda Carter transparente de 2 pulgadas," [Online]. Available:  https://item.taobao.com/item.htm?id=671296900632 	 [Accessed: 06, 2023].
 
-[32] Star Electronic Technology, "2A lithium battery charging board 12.6V," [Online]. Available:  https://item.taobao.com/item.htm?id=671296900632 	 [Accessed: 06, 2023].
+[32] Star Electronic Technology, "2A lithium battery charging board 12.6V," [Online]. Available:  https://item.taobao.com/item.htm?id=652949639498 	 [Accessed: 06, 2023].
 
 [33] Xianyu (Taobao), "JBL Speaker," [Online]. Available:  https://market.m.taobao.com/app/idleFish-F2e/fish-pc/web/detail.html?id=595237376060	  [Accessed: 06, 2023].
 
@@ -540,19 +549,19 @@ The following bash script is a key component for its operation, as it starts and
 
 You can find everything you need to fully understand how Aztec works at this link: https://github.com/raul2222/aztec_ws
 
-#!/bin/bash
+###!/bin/bash
 cd /home/raul/aztec_ws/
-# Ejecutar el primer archivo de launch en una nueva ventana de terminal
+#### Ejecutar el primer archivo de launch en una nueva ventana de terminal
 gnome-terminal -- bash -c "ros2 launch aztec_robot launch_robot.launch.py; exec bash"
-# Esperar un poco para que el primer nodo comience a funcionar
+#### Esperar un poco para que el primer nodo comience a funcionar
 sleep 3
-# Ejecutar el segundo archivo de launch en una nueva ventana de terminal
+#### Ejecutar el segundo archivo de launch en una nueva ventana de terminal
 gnome-terminal -- bash -c "ros2 launch oradar_lidar ms200_scan.launch.py; exec bash"
 sleep 3
 gnome-terminal -- bash -c "ros2 launch aztec_robot localization_launch.py map:=/home/raul/aztec_ws/save.yaml use_sim_time:=false; exec bash"
 sleep 3
 gnome-terminal -- bash -c "rviz2; exec bash"
-# Establecer la posición del robot desde RVIZ2
+#### Establecer la posición del robot desde RVIZ2
 sleep 16
 gnome-terminal -- bash -c "ros2 launch aztec_robot navigation_launch.py use_sim_time:=false map_subscribe_trasient_local:=true; exec bash"
 sleep 1
