@@ -48,3 +48,31 @@ Some studies have shown that children with autism are naturally attracted to tec
 
 Aztec, the experimental robot for intervention in children with autism, emerges as an innovative response to this challenge. It combines the pedagogical approach of the TEACCH method with the interactivity of robotics, providing a more personalized and effective intervention environment for children with autism. With its advanced features, such as the ability to maintain conversations and a comprehensive data storage system, Aztec is positioned as a promising tool for autism intervention. However, its effectiveness still needs to be validated through rigorous research.
 
+## 2 - Objectives
+
+### 2.1 Main Objective:
+
+The main objective of this work is to design, implement, and evaluate a robot, Aztec, which integrates the specific pedagogical techniques of the TEACCH method, adapted to the context of robotics' interactivity and predictability, with the purpose of improving the quality of intervention in children with autism. This objective also includes the development and detailed analysis of Aztec's communication capabilities, as well as its potential to personalize interventions based on the information collected during the sessions.
+
+### 2.2 Secondary Objectives:
+
+1. The first objective is to design and implement a voice processing system in Aztec that allows for fluid and coherent conversations with children. For this, the artificial intelligence of the GPT-4 [17] (Chat-based Generative Pre-trained Transformer) language model by OpenAI is used. OpenAI's choice is highlighted due to its ethical commitment in training language models, focusing on using content appropriate for all audiences and that does not access the Internet by default, thus ensuring safety and efficiency in its interaction with children. This objective also covers experimenting with different models and techniques of natural language processing to optimize Aztec's ability to understand and respond appropriately to children.
+
+2. Design a solid and protected data storage system that allows Aztec to capture and analyze information from interactions, with the aim of enriching the personalization of the intervention. This objective encompasses the construction of a system that complies with data protection and privacy laws and includes the application of additional security measures, such as encryption, to ensure maximum protection of the collected data. Also, it will be ensured that the parents of the children are fully aware of the type of data to be collected and the purpose of such collection. It is crucial to mention that the collected data will not be transferred to third parties.
+
+As a future research line that allows Aztec's continuous evolution, the third objective is proposed: 
+
+3. Collect and analyze the feedback from children and adults participating in interventions with Aztec, with the purpose of constantly improving and adapting the robot's skills and functionalities. This objective considers incorporating the received opinions in the design and implementation process, with the goal of ensuring that Aztec adjusts as best as possible to the needs and expectations of its users.
+
+## 3 - Methodology and Technologies Used.
+
+### 3.1 Description of Aztec Robot
+
+Aztec is a robot designed as an experimental resource to interact with children diagnosed with Autism Spectrum Disorder (ASD). This robot takes inspiration from iconic characters of popular culture such as WALL-E and Short Circuit, with the goal of creating a friendly and accessible design that facilitates a stronger connection with the children.
+
+![Aztec Robot](https://raw.githubusercontent.com/raul2222/aztec_ws/src/images/figure1.png)
+
+
+Figure 1. Photograph of Aztec robot
+
+
