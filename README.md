@@ -8,28 +8,29 @@
 ##### ACADEMIC YEAR: 2022/2023
 
 ## Index
-1. [Introduction](#introduction)
-2. [Objectives](#objectives)
-    2.1 [Main Objective](#main-objective)
-    2.2 [Secondary Objectives](#secondary-objectives)
-3. [Methodology and Technologies used](#methodology-and-technologies-used)
-    3.1 [Description of the Aztec Robot](#description-of-the-aztec-robot)
-        3.1.1 [Appearance and general design](#appearance-and-general-design)
-    3.2 [Proposed methodology to work with the robot](#proposed-methodology-to-work-with-the-robot)
-        3.2.1 [TEACCH Method](#teacch-method)
-        3.2.2 [Data collection](#data-collection)
-        3.2.3 [Configuration of Aztec for therapy sessions](#configuration-of-aztec-for-therapy-sessions)
-        3.2.4 [Evaluation and improvement](#evaluation-and-improvement)
-    3.3 [Technologies used to implement the robot](#technologies-used-to-implement-the-robot)
-        3.3.1 [Hardware](#hardware)
-        3.3.2 [Software](#software)
-    3.4 [Implementation of the Aztec robot](#implementation-of-the-aztec-robot)
-4. [Tests](#tests)
-5. [User feedback](#user-feedback)
-6. [Sustainable Development Goals](#sustainable-development-goals)
-7. [Conclusions and Future Work](#conclusions-and-future-work)
-8. [References](#references)
-9. [Appendices](#appendices)
+1. [Introduction](#introduction)  
+2. [Objectives](#objectives)  
+    2.1 [Main Objective](#main-objective)  
+    2.2 [Secondary Objectives](#secondary-objectives)  
+3. [Methodology and Technologies used](#methodology-and-technologies-used)  
+    3.1 [Description of the Aztec Robot](#description-of-the-aztec-robot)  
+        3.1.1 [Appearance and general design](#appearance-and-general-design)  
+    3.2 [Proposed methodology to work with the robot](#proposed-methodology-to-work-with-the-robot)  
+        3.2.1 [TEACCH Method](#teacch-method)  
+        3.2.2 [Data collection](#data-collection)  
+        3.2.3 [Configuration of Aztec for therapy sessions](#configuration-of-aztec-for-therapy-sessions)  
+        3.2.4 [Evaluation and improvement](#evaluation-and-improvement)  
+    3.3 [Technologies used to implement the robot](#technologies-used-to-implement-the-robot)  
+        3.3.1 [Hardware](#hardware)  
+        3.3.2 [Software](#software)  
+    3.4 [Implementation of the Aztec robot](#implementation-of-the-aztec-robot)  
+4. [Tests](#tests)  
+5. [User feedback](#user-feedback)  
+6. [Sustainable Development Goals](#sustainable-development-goals)  
+7. [Conclusions and Future Work](#conclusions-and-future-work)  
+8. [References](#references)  
+9. [Appendices](#appendices)  
+
 
 ## 1 - Introduction
 Autism is a developmental neurological disorder that manifests in childhood and continues throughout the individual's life. This disorder impacts communication, social interaction, and the behavior of those who suffer from it. Given the increasing prevalence of autism in recent decades, there is an emphasized need to develop effective intervention strategies to improve the quality of life of people with autism [3].
@@ -190,4 +191,29 @@ The following table describes all the software technologies that have been used 
 | MelGAN (Local CPU Inference) | A Generative Model that transforms Mel spectrograms into audio, producing high-quality synthesized voice in real time. |
 | Ubuntu 22.04 | Ubuntu is a Linux-based operating system, known for its ease of use. It is free, open-source, and highly customizable. |
 | Unity | A highly versatile and accessible 3D and 2D game development engine. It offers a robust platform for creating interactive experiences, used by indie developers and large game studios. Supports multiple platforms. |
+
+**Table 2: Aztec Robot Software**
+
+### 3.4 Implementation of Aztec Robot
+
+**Phase 1:**
+
+I started by designing in Unity with the STL files of the Gobilda pieces, but I decided to start with a prototype using pieces I had at home such as wood, a box, and a thermal silicone gun, which are the same ones it has now. Shortly after, we got to know Articubot One, an Australian Robot that also has a plastic box chassis, from which Aztec and I got nourishment from its ready-to-use ROS2. Then I began to research autism, something I am still learning about.
+
+**Phase 2:**
+
+ROS2 NAV2 and ROS2 CONTROL, Aztec moved smoothly with the Joystick but it didn't perform well with the expected autonomous navigation. Many trials with the ROS2 Perception package to take advantage of the depth information from its sensors, tests with different engines, all this extended for 4 months until finally, I found the mistake, the problem was a simple error in odometry.
+
+**Phase 3:**
+
+After several designs of the protoboard to find the most appropriate design, tests with different hardware, 2 short circuits with fire, and fainting from exhaustion, the basic hardware and software for Aztec were ready.
+
+**Phase 4:**
+
+The arrival of GPT-4, for me GPT-4 is the closest I will ever be in my life to meeting intelligent extraterrestrial life, for Aztec, my robot, it is the arrival of a Messiah. From this moment Aztec has been a joint development between GPT-4 and me that has allowed us to leave Aztec at KM 0 of a possible path for improvement in the implementation of the TEACCH method.
+
+The diagram below shows Aztec's hardware and its connections:
+
+![Aztec Robot](https://github.com/raul2222/aztec_ws/blob/main/src/aztec_robot/src/images/figure2.png)
+
 
