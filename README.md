@@ -390,6 +390,11 @@ Aztec first checks the calendar to verify if there are scheduled tasks. If there
 The following link shows the first four minutes of 'life' for Aztec. In it, you can appreciate a completely random conversation it has with me. As can be seen in the video, its responses are aligned with the context it comes with by default:
 
 ![Aztec Robot](https://github.com/raul2222/aztec_ws/blob/main/src/aztec_robot/src/images/figure11.png)
+
+
+[![Aztec Robot](http://img.youtube.com/vi/7z9Z30O-XMM/0.jpg)](http://www.youtube.com/watch?v=7z9Z30O-XMM "AZTEC ROBOT their first 4 minutes of "life" with gpt-3.5-turbo and gpt-4 inside")
+
+
 [AZTEC ROBOT their first 4 minutes of "life" with gpt-3.5-turbo and gpt-4 inside](https://www.youtube.com/watch?v=7z9Z30O-XMM)
 
 ### 5.2 User Story Number 2
@@ -554,18 +559,18 @@ The following bash script is a key component for its operation, as it starts and
 You can find everything you need to fully understand how Aztec works at this link: https://github.com/raul2222/aztec_ws
 
 ###!/bin/bash
-cd /home/raul/aztec_ws/
-#### Ejecutar el primer archivo de launch en una nueva ventana de terminal
+cd /home/your-user/aztec_ws/
+####  Run the first launch file in a new terminal window
 gnome-terminal -- bash -c "ros2 launch aztec_robot launch_robot.launch.py; exec bash"
-#### Esperar un poco para que el primer nodo comience a funcionar
+#### Wait a bit for the first node to start working
 sleep 3
-#### Ejecutar el segundo archivo de launch en una nueva ventana de terminal
+#### Run the second launch file in a new terminal window
 gnome-terminal -- bash -c "ros2 launch oradar_lidar ms200_scan.launch.py; exec bash"
 sleep 3
 gnome-terminal -- bash -c "ros2 launch aztec_robot localization_launch.py map:=/home/raul/aztec_ws/save.yaml use_sim_time:=false; exec bash"
 sleep 3
 gnome-terminal -- bash -c "rviz2; exec bash"
-#### Establecer la posición del robot desde RVIZ2
+#### Set the robot's position from RVIZ2
 sleep 16
 gnome-terminal -- bash -c "ros2 launch aztec_robot navigation_launch.py use_sim_time:=false map_subscribe_trasient_local:=true; exec bash"
 sleep 1
