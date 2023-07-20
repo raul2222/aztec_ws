@@ -389,12 +389,14 @@ Aztec first checks the calendar to verify if there are scheduled tasks. If there
 
 The following link shows the first four minutes of 'life' for Aztec. In it, you can appreciate a completely random conversation it has with me. As can be seen in the video, its responses are aligned with the context it comes with by default:
 
+![Aztec Robot](https://github.com/raul2222/aztec_ws/blob/main/src/aztec_robot/src/images/figure11.png)
 [AZTEC ROBOT their first 4 minutes of "life" with gpt-3.5-turbo and gpt-4 inside](https://www.youtube.com/watch?v=7z9Z30O-XMM)
 
 ### 5.2 User Story Number 2
 
 The link provided below shows how Aztec navigates autonomously. As demonstrated in the video, after running the script to initialize Aztec, the RVIZ2 program appears, where we can observe how Aztec perceives the real world. Later, I have it move to various positions in the room and perform a test in which it must dodge an obstacle that is not in its path, a task it accomplishes excellently.
 
+![Aztec Robot](https://github.com/raul2222/aztec_ws/blob/main/src/aztec_robot/src/images/figure12.png)
 [Link to video](https://www.youtube.com/watch?v=5jJdVX_R80I)
 
 ## 6 - Relationship of the Project with the Sustainable Development Goals (SDGs)
@@ -544,6 +546,8 @@ Types of trials Aztec could undertake to evaluate its efficacy:
 Source Code:
 
 Algorithm for the proportional, integral, and derivative control hosted in ESP32 number 1: https://github.com/raul2222/AZTEC_ESP32_PID
+
+![Aztec Robot](https://github.com/raul2222/aztec_ws/blob/main/src/aztec_robot/src/images/figure13.png)
 
 The following bash script is a key component for its operation, as it starts and manages all of Aztec's autonomous capabilities.
 
