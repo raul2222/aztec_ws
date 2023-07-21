@@ -387,7 +387,7 @@ Aztec first checks the calendar to verify if there are scheduled tasks. If there
 
 ## 4 - Tests
 
-### 5.1 User Story Number 1
+### 4.1 User Story Number 1
 
 The following link shows the first four minutes of 'life' for Aztec. In it, you can appreciate a completely random conversation it has with me. As can be seen in the video, its responses are aligned with the context it comes with by default:
 
@@ -397,7 +397,7 @@ Click on the image below to watch the video:
 [![Aztec Robot](https://github.com/raul2222/aztec_ws/blob/main/src/aztec_robot/src/images/figure11.png)](http://www.youtube.com/watch?v=7z9Z30O-XMM "AZTEC ROBOT their first 4 minutes of life with gpt-4 inside")
 
 
-### 5.2 User Story Number 2
+### 4.2 User Story Number 2
 
 The link provided below shows how Aztec navigates autonomously. As demonstrated in the video, after running the script to initialize Aztec, the RVIZ2 program appears, where we can observe how Aztec perceives the real world. Later, I have it move to various positions in the room and perform a test in which it must dodge an obstacle that is not in its path, a task it accomplishes excellently.
 
@@ -405,7 +405,13 @@ Click on the image below to watch the video:
 
 [![Aztec Robot](https://github.com/raul2222/aztec_ws/blob/main/src/aztec_robot/src/images/figure12.png)](http://www.youtube.com/watch?v=5jJdVX_R80I "AZTEC ROBOT US2")
 
+## 5 - User Feedback
 
+A mother of a child with autism and Obsessive-Compulsive Disorder (OCD) provided her feedback after watching a video of Aztec's first four minutes of "life". According to her, it is crucial to reduce the latency time in Aztec's verbal responses, as a prolonged response time could be distressing for her child. In response to this valuable input, it was decided that Aztec would perform inferences on runpod.io using the CUDA cores of an NVIDIA A100.
+
+However, I anticipate that it may be challenging to achieve a response time below five seconds. Although there is always the possibility of being wrong, to date it seems that reducing the response time beyond this limit is an insurmountable challenge with current technology.
+
+Despite this limitation, I have devised some strategies to improve the interaction experience with Aztec. For example, we could display various animations on the neopixel panel and in Aztec's eyes to distract the user during the waiting time. In this way, we could lessen the feeling of waiting and make the interaction with Aztec more pleasant.
 
 ## 6 - Relationship of the Project with the Sustainable Development Goals (SDGs)
 
@@ -441,13 +447,6 @@ In addition, Aztec has been designed with a focus on sustainability, leveraging 
 
 In conclusion, this project supports the SDGs by addressing both the specific educational needs of children with ASD and the imperative to reduce inequalities and ensure inclusive and quality education for all.
 
-## 6 - User Feedback
-
-A mother of a child with autism and Obsessive-Compulsive Disorder (OCD) provided her feedback after watching a video of Aztec's first four minutes of "life". According to her, it is crucial to reduce the latency time in Aztec's verbal responses, as a prolonged response time could be distressing for her child. In response to this valuable input, it was decided that Aztec would perform inferences on runpod.io using the CUDA cores of an NVIDIA A100.
-
-However, I anticipate that it may be challenging to achieve a response time below five seconds. Although there is always the possibility of being wrong, to date it seems that reducing the response time beyond this limit is an insurmountable challenge with current technology.
-
-Despite this limitation, I have devised some strategies to improve the interaction experience with Aztec. For example, we could display various animations on the neopixel panel and in Aztec's eyes to distract the user during the waiting time. In this way, we could lessen the feeling of waiting and make the interaction with Aztec more pleasant.
 
 ## 7 - Conclusions and Future Work
 
