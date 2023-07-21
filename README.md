@@ -219,7 +219,6 @@ The arrival of GPT-4, for me GPT-4 is the closest I will ever be in my life to m
 The diagram below shows Aztec's hardware and its connections:
 
 ![Aztec Robot](https://github.com/raul2222/aztec_ws/blob/main/src/aztec_robot/src/images/figure2.png)
-
 Figure 2: Internal Connection Diagram of Aztec.
 
 To better understand how Aztec's software meets the needs of the various stakeholders involved, it is helpful to examine a series of "user stories". User stories are a technique used in software development that helps to define the features and functionalities of the system from the perspective of the end user. Below are some user stories that describe how Aztec interacts with different types of users:
@@ -246,7 +245,6 @@ b. Algorithms and processes used to implement US1:
 c. Block Diagram of User Story 1 (US1) and its explanation:
 
 ![Aztec Robot](https://github.com/raul2222/aztec_ws/blob/main/src/aztec_robot/src/images/figure3.png)
-
 Figure 3: Block Diagram User Story number 1
 
 The process begins with the detection of human voice, which is captured through a microphone with a resolution of 16 bits at 32000 Hz. This audio data stream is then transmitted to the ESP32, a microcontroller where enhancements on the audio are performed.
@@ -316,7 +314,7 @@ In summary, autonomous navigation in NAV2 is a complex process that demands the 
 d. HU2 Flowchart:
 
 ![HU2 User Story Flowchart](https://github.com/raul2222/aztec_ws/blob/main/src/aztec_robot/src/images/figure6.png)
-Figure 6: Diagrama de flujo historia de usuario 2.
+Figure 6: User Story Number 2 Flow Diagram
 
 
 After obtaining the map of the place where we plan to use NAV2's autonomous navigation, we proceed to initialize the robot, sensors, and NAV2's navigation and localization modules. If any of these modules generate an error, navigation will not work, and repairs will be needed. If everything has initialized correctly, we can start navigation by setting a point on the map. Once navigation has been successful and we have reached the goal, it's at this point where we can use a joystick or any other module we've programmed. For instance, we could use a face detector in OAK-D-PRO to get its bounding boxes, calculate the centroid, and thus make Aztec able to look directly into the eyes of the person in front of it.
@@ -344,12 +342,14 @@ b. Algorithms and Processes Used to Implement HU3:
 c. Block Diagram HU3 and its explanation:
 
 ![Figure 7: User Story Number 3 Block Diagram](https://github.com/raul2222/aztec_ws/blob/main/src/aztec_robot/src/images/figure7.png)
+Figure 7: User Story Number 3 Block Diagram
 
 Aztec agrees with the user on the music to use to start physical activity, for which it consults the music API and starts the exercise. During the activity, Aztec plays the selected audio and displays the exercise to be performed on its pixel matrix. Simultaneously, the body position detection model, which is preloaded on OAK-D-PRO, sends data to Aztec to verify if the exercise is being carried out correctly. Aztec, making use of the information provided by the 2D and 3D LIDARs, performs dance movements and examines its environment to ensure safe movement. Finally, Aztec offers verbal feedback to the user about their performance during the exercise.
 
 d. Flow Diagram HU3:
 
 ![Figure 8: User Story Number 3 Flow Diagram](https://github.com/raul2222/aztec_ws/blob/main/src/aztec_robot/src/images/figure8.png)
+Figure 8: User Story Number 3 Flow Diagram
 
 Aztec verifies if the user has not performed enough physical activity in the last few hours and, if so, suggests the user dance. If the user approves, the activity begins. During and at the end of the activity, Aztec provides feedback to the user. Finally, Aztec records the activity to verify that it has been carried out and how it was performed.
 
@@ -374,12 +374,15 @@ b. Algorithms and processes used to implement HU4:
 c. Block Diagram HU4 and its explanation:
 
 ![Figure 9: User Story Number 4 Block Diagram](https://github.com/raul2222/aztec_ws/blob/main/src/aztec_robot/src/images/figure9.png)
+Figure 9: User Story Number 4 Block Diagram
 
 The professional reviews the previous therapy sessions stored in Rosbag2 and also schedules new events in the calendar for the child. Aztec, for its part, informs the child about the calendar events through its voice and the Neopixel panel.
 
 d. Flow Diagram HU4:
 
 ![Figure 10: User Story Number 4 Flow Diagram](https://github.com/raul2222/aztec_ws/blob/main/src/aztec_robot/src/images/figure10.png)
+Figure 10: User Story Number 4 Flow Diagram
+
 
 Aztec first checks the calendar to verify if there are scheduled tasks. If there are any, Aztec informs the user. If the user decides not to perform the task, Aztec records this decision and returns to the starting point, remaining on standby until the time of the next task comes. On the other hand, if the user accepts the task, Aztec remains on standby until the user finishes, records the completed task, and then returns to the starting point to wait until the time of the next task.
 
@@ -392,10 +395,7 @@ The following link shows the first four minutes of 'life' for Aztec. In it, you 
 
 Click on the image below to watch the video:
 
-[![Aztec Robot](https://github.com/raul2222/aztec_ws/blob/main/src/aztec_robot/src/images/figure11.png)](http://www.youtube.com/watch?v=7z9Z30O-XMM "AZTEC ROBOT their first 4 minutes of "life" with gpt-3.5-turbo and gpt-4 inside")
-
-
-
+[![Aztec Robot](https://github.com/raul2222/aztec_ws/blob/main/src/aztec_robot/src/images/figure11.png)](http://www.youtube.com/watch?v=7z9Z30O-XMM "AZTEC ROBOT their first 4 minutes of life with gpt-4 inside")
 
 
 ### 5.2 User Story Number 2
