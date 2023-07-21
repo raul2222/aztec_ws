@@ -9,28 +9,28 @@
 
 ## Index
 
-1. [Introduction](#introduction)
-2. [Objectives](#objectives)
-    * 2.1 [Main Objective](#main-objective)
-    * 2.2 [Secondary Objectives](#secondary-objectives)
-3. [Methodology and Technologies used](#methodology-and-technologies-used)
-    * 3.1 [Description of the Aztec Robot](#description-of-the-aztec-robot)
-        * 3.1.1 [Appearance and general design](#appearance-and-general-design)
-    * 3.2 [Proposed methodology to work with the robot](#proposed-methodology-to-work-with-the-robot)
-        * 3.2.1 [TEACCH Method](#teacch-method)
-        * 3.2.2 [Data collection](#data-collection)
-        * 3.2.3 [Configuration of Aztec for therapy sessions](#configuration-of-aztec-for-therapy-sessions)
-        * 3.2.4 [Evaluation and improvement](#evaluation-and-improvement)
-    * 3.3 [Technologies used to implement the robot](#technologies-used-to-implement-the-robot)
-        * 3.3.1 [Hardware](#hardware)
-        * 3.3.2 [Software](#software)
-    * 3.4 [Implementation of the Aztec robot](#implementation-of-the-aztec-robot)
-4. [Tests](#tests)
-5. [User feedback](#user-feedback)
-6. [Sustainable Development Goals](#sustainable-development-goals)
-7. [Conclusions and Future Work](#conclusions-and-future-work)
-8. [References](#references)
-9. [Appendices](#appendices)
+1. [Introduction](#1---introduction)
+2. [Objectives](#2---objectives)
+    * 2.1 [Main Objective](#21-main-objective)
+    * 2.2 [Secondary Objectives](#22-secondary-objectives)
+3. [Methodology and Technologies used](#3---methodology-and-technologies-used)
+    * 3.1 [Description of the Aztec Robot](#31-description-of-the-aztec-robot)
+        * 3.1.1 [Appearance and general design](#311-appearance-and-general-design)
+    * 3.2 [Proposed methodology to work with the robot](#32-proposed-methodology-to-work-with-the-robot)
+        * 3.2.1 [TEACCH Method](#321-teacch-method)
+        * 3.2.2 [Data collection](#322-data-collection)
+        * 3.2.3 [Configuration of Aztec for therapy sessions](#323-configuration-of-aztec-for-therapy-sessions)
+        * 3.2.4 [Evaluation and improvement](#324-evaluation-and-improvement)
+    * 3.3 [Technologies used to implement the robot](#33-technologies-used-to-implement-the-robot)
+        * 3.3.1 [Hardware](#331-hardware)
+        * 3.3.2 [Software](#332-software)
+    * 3.4 [Implementation of the Aztec robot](#34-implementation-of-the-aztec-robot)
+4. [Tests](#4---tests)
+5. [User feedback](#5---user-feedback)
+6. [Sustainable Development Goals](#6---sustainable-development-goals)
+7. [Conclusions and Future Work](#7---conclusions-and-future-work)
+8. [References](#8---references)
+9. [Appendices](#9---appendices)
 
 
 
@@ -75,7 +75,6 @@ As a future research line that allows Aztec's continuous evolution, the third ob
 Aztec is a robot designed as an experimental resource to interact with children diagnosed with Autism Spectrum Disorder (ASD). This robot takes inspiration from iconic characters of popular culture such as WALL-E and Short Circuit, with the goal of creating a friendly and accessible design that facilitates a stronger connection with the children.
 
 ![Aztec Robot](https://github.com/raul2222/aztec_ws/blob/main/src/aztec_robot/src/images/figure1.png)
-
 Figure 1. Photograph of Aztec robot
 
 ## 3.1.1 Appearance and General Design

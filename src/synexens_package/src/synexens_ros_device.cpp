@@ -545,7 +545,9 @@ void SynexensROSDevice::framePublisherThread()
                 // Re-sychronize the timestamps with the capture timestamp
                 depth_raw_frame->header.stamp = capture_time;
                 depth_raw_frame->header.frame_id = calibration_data_.tf_prefix_ + calibration_data_.depth_camera_frame_;
+                
                 depth_raw_publisher_.publish(depth_raw_frame);
+
 
                 depth_raw_camera_info.header.stamp = capture_time;
                 const stream_profile *profile = capture->get_depth_frame()->get_profile();
