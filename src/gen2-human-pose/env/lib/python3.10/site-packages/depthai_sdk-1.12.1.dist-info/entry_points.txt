@@ -1,0 +1,2 @@
+[console_scripts]
+depthai_sdk = depthai_sdk_console_scripts.depthai_sdk:main

@@ -10,19 +10,19 @@ def generate_launch_description():
             name='synexens_ros',
             parameters=[{
                 # Prefix added to tf frame IDs. It typically contains a trailing '_' unless empty.
-                'tf_prefix': 'sy3_',  
+                'tf_prefix': 'laser_frame',  
                 # Enable or disable the depth camera
                 'depth_enabled': True,
                 # The resolution of the depth frame. Options are: 240P, 480P
                 'depth_resolution': '240P',
                 # Enable or disable the ir camera
-                'ir_enabled': True,
+                'ir_enabled': False,
                 # Enable or disable the color camera
-                'color_enabled': True,
+                'color_enabled': False,
                 # Resolution at which to run the color camera. Valid options: 1080P
                 'color_resolution': '1080P',
                 # The FPS of the RGB and Depth cameras. Options are: 5, 7, 15, 30
-                'fps': 30,
+                'fps': 7,
                 # Generate a point cloud from depth data. Requires depth_enabled
                 'point_cloud_enabled': True,
                 # True if mapped depth in color space should be enabled, only valid in depth480P rgb1080P
@@ -60,9 +60,9 @@ def generate_launch_description():
                 # EDGE value sett. Use default setting if value=-1
                 'filter_edge_value': -1,
                 # SPECKLE value sett. Use default setting if value=-1
-                'filter_speckle_value': -1,
+                'filter_speckle_value': 1,
                 # SOBEL value sett. Use default setting if value=-1
-                'filter_sobel_value': -1,
+                'filter_sobel_value': 1,
                 # EDGE_MAD value sett. Use default setting if value=-1
                 'filter_mad_value': -1,
                 # OKADA value sett. Use default setting if value=-1

@@ -1,0 +1,3 @@
+[console_scripts]
+blobconverter = blobconverter.__init__:__run_cli__
+

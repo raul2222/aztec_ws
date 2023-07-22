@@ -1,0 +1,2 @@
+[console_scripts]
+pipeline_graph = depthai_pipeline_graph.pipeline_graph:main

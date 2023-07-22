@@ -18,7 +18,7 @@ def generate_launch_description():
                 # Enable or disable the depth camera
                 'depth_enabled': True,
                 # The resolution of the depth frame. Options are: 240P, 480P
-                'depth_resolution': '480P',
+                'depth_resolution': '240P',
                 # Enable or disable the ir camera
                 'ir_enabled': False,
                 # Enable or disable the color camera
@@ -26,11 +26,11 @@ def generate_launch_description():
                 # Resolution at which to run the color camera. Valid options: 1080P
                 'color_resolution': '1080P',
                 # The FPS of the RGB and Depth cameras. Options are: 5, 7, 15, 30
-                'fps': 30,
+                'fps': 15,
                 # Generate a point cloud from depth data. Requires depth_enabled
-                'point_cloud_enabled': False,
+                'point_cloud_enabled': True,
                 # True if mapped depth in color space should be enabled, only valid in depth480P rgb1080P
-                'depth_to_rgb_enabled': True,
+                'depth_to_rgb_enabled': False,
                 # True if mapped color in depth space should be enabled, only valid in depth480P rgb1080P
                 'rgb_to_depth_enabled': False,
                 # Whether to rescale the IR image to an 8-bit monochrome image for visualization and further processing. A scaling factor (ir_mono8_scaling_factor) is applied.
@@ -42,9 +42,9 @@ def generate_launch_description():
                 # The Max Value of the Depth cameras Exposure Range. Valid value range: > 0, Use default setting if value=-1
                 'exposure_range_max': -1,
                 # The Min Value of Depth Map Display Distance in mm. Use default setting if value=-1
-                'distance_range_min': -1,
+                'distance_range_min': 100,
                 # The Max Value of Depth Map Display Distance in mm. Use default setting if value=-1
-                'distance_range_max': -1,
+                'distance_range_max': 3500,
                 # 0 to Disable Rgb image Flip, 1 to Enable. Use default setting if value=-1
                 'rgb_image_flip': -1,
                 # 0 to Disable Rgb image Mirror, 1 to Enable. Use default setting if value=-1
@@ -56,7 +56,7 @@ def generate_launch_description():
                 # 0 to Disable Depth image Filter, 1 to Enable. Use default setting if value=-1
                 'depth_image_filter': 1,
                 # AMPLITITUD value sett. Use default setting if value=-1
-                'filter_amplititud_value': -1,
+                'filter_amplititud_value': 1,
                 # MEDIAN value sett. Use default setting if value=-1
                 'filter_median_value': -1,
                 # GAUSS value sett. Use default setting if value=-1

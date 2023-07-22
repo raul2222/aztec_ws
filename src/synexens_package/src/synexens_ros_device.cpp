@@ -309,13 +309,14 @@ sy3_error SynexensROSDevice::getPointCloud(sy3::frameset *capture, PointCloud2::
         return sy3_error::INCONSISTENCY_RES;
     }
 
-    point_cloud->header.frame_id = calibration_data_.tf_prefix_ + calibration_data_.depth_camera_frame_;
+    point_cloud->header.frame_id = calibration_data_.tf_prefix_;
+    //  + calibration_data_.depth_camera_frame_;
     point_cloud->header.stamp = rclcpp::Clock().now();
 
     // Tranform depth image to point cloud
     return fillPointCloud(sy3_depth_frame, point_cloud);
 }
-
+/*
 sy3_error SynexensROSDevice::fillPointCloud(sy3::depth_frame *depth_image, PointCloud2::SharedPtr &point_cloud)
 {
     sy3::sy3_error e;
@@ -370,6 +371,71 @@ sy3_error SynexensROSDevice::fillPointCloud(sy3::depth_frame *depth_image, Point
 
     return sy3_error::SUCCESS;
 }
+*/
+
+sy3_error SynexensROSDevice::fillPointCloud(sy3::depth_frame *depth_image, PointCloud2::SharedPtr &point_cloud)
+{
+    sy3::sy3_error e;
+    if (!sy3_engine_)
+    {
+        RCLCPP_INFO(node_->get_logger(), "Cannot get process engin \n");
+        return sy3_error::INCONSISTENCY_RES;
+    }
+    sy3::points *points = sy3_engine_->comptute_points(depth_image, e);
+
+    int length = points->get_length() / 3;
+    int point_count = depth_image->get_height() * depth_image->get_width();
+    // check points number
+    if (point_count != length)
+    {
+        RCLCPP_INFO(node_->get_logger(), "Point Cloud Error: invalid points number \n");
+        return sy3_error::INCONSISTENCY_RES;
+    }
+
+    point_cloud->height = depth_image->get_height();
+    point_cloud->width = depth_image->get_width();
+    point_cloud->is_dense = false;
+    point_cloud->is_bigendian = false;
+
+    sensor_msgs::PointCloud2Modifier pcd_modifier(*point_cloud);
+    pcd_modifier.setPointCloud2FieldsByString(1, "xyz");
+
+    sensor_msgs::PointCloud2Iterator<float> iter_x(*point_cloud, "x");
+    sensor_msgs::PointCloud2Iterator<float> iter_y(*point_cloud, "y");
+    sensor_msgs::PointCloud2Iterator<float> iter_z(*point_cloud, "z");
+
+    pcd_modifier.resize(point_count);
+
+    point3f_t *point_cloud_buffer = (point3f_t *)points->get_points();
+
+    for (int i = 0; i < point_count; i++, ++iter_x, ++iter_y, ++iter_z)
+    {
+        if (point_cloud_buffer[i].z <= 0.0f)
+        {
+            *iter_x = *iter_y = *iter_z = std::numeric_limits<float>::quiet_NaN();
+        }
+        else
+        {
+            constexpr float kMillimeterToMeter = 1.0 / 1000.0f;
+            float x = kMillimeterToMeter * point_cloud_buffer[i].x;
+            float y = kMillimeterToMeter * point_cloud_buffer[i].y;
+            float z = kMillimeterToMeter * point_cloud_buffer[i].z;
+
+            // 90 degree rotation downward around X-axis
+            *iter_x = z;
+            *iter_y = x;
+            *iter_z = y;
+        }
+    }
+    delete points;
+
+    return sy3_error::SUCCESS;
+}
+
+
+
+
+
 
 // PointCloud end
 
@@ -527,7 +593,7 @@ void SynexensROSDevice::framePublisherThread()
                 ir_raw_camerainfo_publisher_->publish(ir_raw_camera_info);
             }
         }
-
+        
         // depth
         if (sy3_config_params_.depth_enabled)
         {
@@ -556,6 +622,64 @@ void SynexensROSDevice::framePublisherThread()
                 depth_raw_camerainfo_publisher_->publish(depth_raw_camera_info);
             }
         }
+        /*
+        // depth
+        if (sy3_config_params_.depth_enabled)
+        {
+            if ((capture && capture->get_depth_frame() != nullptr))
+            {
+                result = getDepthFrame(capture, depth_raw_frame);
+
+                if (result != sy3_error::SUCCESS)
+                {
+                    RCLCPP_ERROR_STREAM(node_->get_logger(), "Failed to get raw depth frame");
+                    rclcpp::shutdown();
+                    return;
+                }
+
+                // Convert Image::SharedPtr to cv::Mat
+                cv_bridge::CvImagePtr cv_ptr;
+                try
+                {
+                    cv_ptr = cv_bridge::toCvCopy(depth_raw_frame, sensor_msgs::image_encodings::TYPE_16UC1);
+                }
+                catch (cv_bridge::Exception& e)
+                {
+                    //ROS_ERROR("cv_bridge exception: %s", e.what());
+                    return;
+                }
+                cv::Mat gray16 = cv_ptr->image;
+
+                // Normalize the depth image
+                cv::Mat tmp;
+                cv::Mat gray8 = cv::Mat(gray16.size(), CV_8U);
+                cv::normalize(gray16, tmp, 0, 255, cv::NORM_MINMAX);
+                cv::convertScaleAbs(tmp, gray8);
+                
+                // Apply colormap for visualization
+                cv::Mat colored_depth;
+                cv::applyColorMap(gray8, colored_depth, cv::COLORMAP_JET);
+
+                // Convert the cv::Mat to sensor_msgs/Image
+                cv_bridge::CvImage out_msg;
+                out_msg.header   = depth_raw_frame->header; // Same timestamp and tf frame as depth image
+                out_msg.encoding = sensor_msgs::image_encodings::RGB8; // Or whatever
+                out_msg.image    = colored_depth; // Your cv::Mat
+
+                // Re-sychronize the timestamps with the capture timestamp
+                out_msg.header.stamp = capture_time;
+                out_msg.header.frame_id = calibration_data_.tf_prefix_ + calibration_data_.depth_camera_frame_;
+                
+                depth_raw_publisher_.publish(out_msg.toImageMsg());
+
+                depth_raw_camera_info.header.stamp = capture_time;
+                const stream_profile *profile = capture->get_depth_frame()->get_profile();
+                sy3_intrinsics intrinsics = profile->get_intrinsics();
+                calibration_data_.getDepthCameraInfo(depth_raw_camera_info, &intrinsics);
+                depth_raw_camerainfo_publisher_->publish(depth_raw_camera_info);
+            }
+        }
+*/
 
         // PointCloud
         // Only create pointcloud when we are using a device or we have a synchronized image.
