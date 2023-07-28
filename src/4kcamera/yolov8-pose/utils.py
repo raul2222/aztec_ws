@@ -1,9 +1,20 @@
 # coding=utf-8
 import collections
 import time
-
+import requests
+import json
 import cv2
 import numpy as np
+
+def send_lines_over_tcp(lines):
+    URL = 'http://192.168.0.196:80/skeleton'  # URL del servidor
+
+    try:
+        # Intentar enviar las líneas al servidor
+        requests.post(URL, json=lines)
+        print('Lines sent!')
+    except requests.exceptions.ConnectionError:
+        print('Failed to connect to server.')
 
 
 def xywh2xyxy(x):
@@ -243,9 +254,12 @@ def plot_skeleton_kpts(im, kpts, steps):
             cv2.circle(im, (int(x_coord), int(y_coord)), radius, (int(r), int(g), int(b)), -1)
             # Agregamos la numeración aquí
             cv2.putText(im, str(kid), (int(x_coord), int(y_coord)), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255,255,255), 2)
+    
 
 
 
+    # Crear una lista vacía para almacenar todas las líneas
+    lines = []
 
     for sk_id, sk in enumerate(skeleton):
         r, g, b = pose_limb_color[sk_id]
@@ -261,7 +275,11 @@ def plot_skeleton_kpts(im, kpts, steps):
         if pos2[0] % 640 == 0 or pos2[1] % 640 == 0 or pos2[0] < 0 or pos2[1] < 0:
             continue
         cv2.line(im, pos1, pos2, (int(r), int(g), int(b)), thickness=2)
-    return im
+        # Almacenar la línea en la lista de líneas
+        lines.append((pos1, pos2, (int(r), int(g), int(b))))
+
+    send_lines_over_tcp(lines)
+    return im  # Asegúrate de que la lista de líneas también se devuelva desde la función
 
 
 class FPSHandler:

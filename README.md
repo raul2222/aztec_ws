@@ -7,6 +7,24 @@
 ##### Tutor: Pérez Pascual, Mª Asunción 
 ##### ACADEMIC YEAR: 2022/2023
 
+
+## Abstract
+
+Aztec, an innovative therapeutic robot designed to enhance educational interventions for children with Autism Spectrum Disorder (ASD), built upon the Robot Operating System 2 (ROS 2) framework. This robot, supported by the latest Artificial Intelligence technologies, such as large language models. Aztec is based on the TEACCH methodology, renowned for its effectiveness in adapting to the specific skills and needs of each child with ASD.
+
+In the context of the United Nations' Sustainable Development Goals (SDGs), my project specifically aligns with three of them:
+
+SDG 3 (Health and Well-being): Aztec contributes to this goal by fostering the mental and emotional health of children with ASD, and by encouraging physical activity, helping to improve their physical and consequently mental well-being.
+
+SDG 4 (Quality Education): Through Aztec, I aim to enhance the quality of education for children with ASD, providing an effective and personalized therapeutic intervention.
+
+SDG 10 (Reduced Inequalities): With Aztec, my goal is to reduce educational inequalities for children with ASD, facilitating their social and economic inclusion.
+
+Aztec represents a promising first step in exploring how robotics and artificial intelligence can be powerful tools to improve the quality of life for children with ASD.
+
+Keywords: ROS2, Autism, A.I. ,Therapeutic Robotics ,Large Language Models, Human-Robot Interaction, Assistive Technology, Social Robots.
+
+
 ## Index
 
 1. [Introduction](#1---introduction)
@@ -404,6 +422,14 @@ The link provided below shows how Aztec navigates autonomously. As demonstrated 
 Click on the image below to watch the video:
 
 [![Aztec Robot](https://github.com/raul2222/aztec_ws/blob/main/src/aztec_robot/src/images/figure12.png)](http://www.youtube.com/watch?v=5jJdVX_R80I "AZTEC ROBOT US2")
+
+### 4.3 User Story Number 3
+
+The following link shows how Aztec can motivate children to exercise with music and luminous effects. The Aztec camera captures the child's body and displays particles in the LED matrix, which adjust according to the child's movement:
+
+Click on the image below to watch the video:
+
+[![Aztec Robot](https://github.com/raul2222/aztec_ws/blob/main/src/aztec_robot/src/images/figure14.png)](https://www.youtube.com/watch?v=15vj82jshfE "AZTEC ROBOT US3")
 
 ## 5 - User Feedback
 

@@ -131,6 +131,7 @@ def run():
             return data
 
         vid_writer = cv2.VideoWriter(
+            
             ROOT.joinpath(f"result_{datetime.now().strftime( '%Y%m%d_%H%M%S' )}.mp4").as_posix(),
             cv2.VideoWriter_fourcc(*"mp4v"),
             20,
@@ -155,7 +156,7 @@ def run():
                 fpsHandler.drawFps(frame, "color")
 
                 frame = displayFrame("image", frame)
-                vid_writer.write(frame)
+               # vid_writer.write(frame)
                 frame = None
 
             if cv2.waitKey(1) == ord("q"):
